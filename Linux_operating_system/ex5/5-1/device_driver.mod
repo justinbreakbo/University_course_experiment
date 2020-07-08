@@ -1,0 +1,2 @@
+/home/just/c/University_course_experiment/Linux_operating_system/ex5/5-1/device_driver.o
+

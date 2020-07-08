@@ -1,0 +1,10 @@
+ifneq ($(KERNELRELEASE),)
+	obj-m := proc_hello.o
+else
+CURRENT_PATH := $(shell pwd)
+LINUX_KERNEL_PATH ?= /usr/lib/modules/$(shell uname -r)/build
+default:
+	$(MAKE) -C $(LINUX_KERNEL_PATH) M=$(CURRENT_PATH) modules
+endif
+clean:
+	$(MAKE) -C $(LINUX_KERNEL_PATH) M=$(CURRENT_PATH) clean
